@@ -2,6 +2,8 @@
 
 ### This repo will introduce regular optimization algorithms with its Python implementation
 
+In the first part, Line Search Algorithm will in introduced. For Line Search definition and example, please review [Line Search Example](https://github.com/alaricxu/Optimization-Algorithms-used-in-Machine-Learning-Theory-and-Application/blob/master/Term%20Explanation-Line%20Search%20%26%20Trust%20Region.pdf)
+
 #### Newton's method
 
 In calculus, Newton's method refers to an iterative method for finding the roots of a differentiable function ![img](https://latex.codecogs.com/gif.latex?f), which are solutions to the equation ![Equation 1](https://latex.codecogs.com/gif.latex?f%28x%29%3D0). In optimization, Newton's method is applied to the derivative ![img](https://latex.codecogs.com/gif.latex?f%27) of a twice-differentiable function ![img](https://latex.codecogs.com/gif.latex?f) to find the roots of the derivative.
