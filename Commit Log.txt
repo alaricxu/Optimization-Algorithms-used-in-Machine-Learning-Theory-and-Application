@@ -1,0 +1,2 @@
+03/31/2019 Updated Newton's method & Gradient Descent
+04/01/2019 Updated Quasi-Newton's method
