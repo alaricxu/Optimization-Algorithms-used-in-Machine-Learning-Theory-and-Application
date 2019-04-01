@@ -24,6 +24,26 @@ Where applicable, Newton's method converges much faster towards a local maximum 
 
 We can view the whole process as calculating the vector ![img](https://latex.codecogs.com/gif.latex?%5CDelta%20x%3Dx_%7Bn&plus;1%7D-x_n)for the  equation system ![img](https://latex.codecogs.com/gif.latex?%5BHf%28x_n%29%5D%20%5CDelta%20x%3D%5Cnabla%20f%28x_n%29). To solve this linear equations system, iterative matrix factorization or approximation metrics may be applied.
 
+### Quasi-Newton Method
+
+As its name implies, Quasi-Newton method serves as an alternative to Newton's method, to find zeroes or local maxima and minima of functions. They can be used if the Jacobian or Hessian is unavailable or is too expensive to compute at every iteration.
+
+**Search for zeros: root finding**
+
+Newton's method to find zeroes of a function ![img](https://latex.codecogs.com/gif.latex?g) of multiple variables is given by ![img](https://latex.codecogs.com/gif.latex?x_%7Bn&plus;1%7D%3Dx_n-%5BJ_g%28x_n%29%5D%5E%7B-1%7Dg%28x_n%29), where ![img](https://latex.codecogs.com/gif.latex?%5BJ_g%28x_n%29%5D%5E%7B-1%7D)is the left inverse of the Jacobian matrix ![img](https://latex.codecogs.com/gif.latex?J_g%28x_n%29)of ![img](https://latex.codecogs.com/gif.latex?g) evaluated for ![img](https://latex.codecogs.com/gif.latex?x_%7Bn%7D). Strictly speaking, any method that replaces the exact Jacobian matrix with an approximation is a quasi-Newton method. Common approaches for find zeros are Broyden's "good" and "bad" methods, column-updating method, inverse column-updating method, quasi-Newton least squares method and the quasi-Newton inverse least squares method.
+
+**Search for extrema: optimization**
+
+If ![img](https://latex.codecogs.com/gif.latex?g)is gradient of ![img](https://latex.codecogs.com/gif.latex?f), then searching for the zeroes of the vector-valued function![img](https://latex.codecogs.com/gif.latex?g)corresponds to the search for the extrema of the scalar-valued function ![img](https://latex.codecogs.com/gif.latex?f); the Jacobian of ![img](https://latex.codecogs.com/gif.latex?g)now becomes the Hessian of ![img](https://latex.codecogs.com/gif.latex?f).
+
+As in Newton's method, one uses a second-order approximation to find the minimum of a function ![img](https://latex.codecogs.com/gif.latex?f%28x%29). The Taylor series of ![img](https://latex.codecogs.com/gif.latex?f%28x%29) around an iterate is ![img](https://latex.codecogs.com/gif.latex?f%28x_k&plus;%5CDelta%20x%29%5Capprox%20f%28x_k%29&plus;%5Cnabla%20f%28x_k%29%5ET%20%5CDelta%20x&plus;%5Cfrac%7B1%7D%7B2%7D%20%5CDelta%20x%5ET%20B%20%5CDelta%20x) where (![img](https://latex.codecogs.com/gif.latex?%5Cnabla%20f)) is the gradient, and ![img](https://latex.codecogs.com/gif.latex?B)an approximation to the Hessian matrix. The gradient of this approximation is ![img](https://latex.codecogs.com/gif.latex?%5Cnabla%20f%28x_k&plus;%5CDelta%20x%29%5Capprox%20%5Cnabla%20f%28x_k%29&plus;B%20%5CDelta%20x). Set this gradient to zero, we have the Newton step: ![img](https://latex.codecogs.com/gif.latex?%5CDelta%20x%3D-B%5E%7B-1%7D%20%5Cnabla%20f%28x_k%29). The Hessian approximation ![img](https://latex.codecogs.com/gif.latex?B)is chosen to satisfy ![img](https://latex.codecogs.com/gif.latex?%5Cnabla%20f%28x_k&plus;%5CDelta%20x%29%3D%5Cnabla%20f%28x_k%29&plus;B%20%5CDelta%20x).
+
+*The Update Process*
+
+- ![img](https://latex.codecogs.com/gif.latex?%5CDelta%20x_k%3D-%5Calpha_k%20B_k%5E%7B-1%7D%20%5Cnabla%20f%28x_k%29) with ![img](https://latex.codecogs.com/gif.latex?%7B%5Calpha%7D)chosen to satisfy the Wolfe conditions
+- Update use the equation: ![img](https://latex.codecogs.com/gif.latex?x_%7Bk&plus;1%7D%3Dx_k&plus;%5CDelta%20x_k)
+- The gradient computed at the new point ![img](https://latex.codecogs.com/gif.latex?%5Cnabla%20f%28x_%7Bk&plus;1%7D%29), and ![img](https://latex.codecogs.com/gif.latex?y_k%3D%20%5Cnabla%20f%28x_%7Bk&plus;1%7D%29%20-%5Cnabla%20f%28x_k%29)used to update the approximate Hessian ![img](https://latex.codecogs.com/gif.latex?%7BB_%7Bk&plus;1%7D%7D)
+
 #### Gradient Descent
 
 ![_images/gradient_descent_demystified.png](https://ml-cheatsheet.readthedocs.io/en/latest/_images/gradient_descent_demystified.png)
