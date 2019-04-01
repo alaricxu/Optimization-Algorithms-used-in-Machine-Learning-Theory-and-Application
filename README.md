@@ -2,6 +2,8 @@
 
 Inspired by **Convex Optimization**-Boyd and Vandenberghe, to get the book, click [Convex Optimization pdf version](https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf)
 
+See the update history [Commit Log](https://github.com/alaricxu/Optimization-Algorithms-used-in-Machine-Learning-Theory-and-Application/blob/master/Commit%20Log.txt)
+
 ### This repo will introduce regular optimization algorithms with its Python implementation
 
 In the first part, Line Search Algorithm will be introduced. For Line Search definition and example, please review [Line Search Example](https://github.com/alaricxu/Optimization-Algorithms-used-in-Machine-Learning-Theory-and-Application/blob/master/Term%20Explanation-Line%20Search%20%26%20Trust%20Region.pdf)
@@ -24,7 +26,7 @@ Where applicable, Newton's method converges much faster towards a local maximum 
 
 We can view the whole process as calculating the vector ![img](https://latex.codecogs.com/gif.latex?%5CDelta%20x%3Dx_%7Bn&plus;1%7D-x_n)for the  equation system ![img](https://latex.codecogs.com/gif.latex?%5BHf%28x_n%29%5D%20%5CDelta%20x%3D%5Cnabla%20f%28x_n%29). To solve this linear equations system, iterative matrix factorization or approximation metrics may be applied.
 
-### Quasi-Newton Method
+#### Quasi-Newton method
 
 As its name implies, Quasi-Newton method serves as an alternative to Newton's method, to find zeroes or local maxima and minima of functions. They can be used if the Jacobian or Hessian is unavailable or is too expensive to compute at every iteration.
 
