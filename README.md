@@ -1,8 +1,10 @@
 # Optimization-Algorithms-used-in-Machine-Learning-Theory-and-Application
 
+Inspired by **Convex Optimization**-Boyd and Vandenberghe, to get the book, click [Convex Optimization pdf version](https://web.stanford.edu/~boyd/cvxbook/bv_cvxbook.pdf)
+
 ### This repo will introduce regular optimization algorithms with its Python implementation
 
-In the first part, Line Search Algorithm will in introduced. For Line Search definition and example, please review [Line Search Example](https://github.com/alaricxu/Optimization-Algorithms-used-in-Machine-Learning-Theory-and-Application/blob/master/Term%20Explanation-Line%20Search%20%26%20Trust%20Region.pdf)
+In the first part, Line Search Algorithm will be introduced. For Line Search definition and example, please review [Line Search Example](https://github.com/alaricxu/Optimization-Algorithms-used-in-Machine-Learning-Theory-and-Application/blob/master/Term%20Explanation-Line%20Search%20%26%20Trust%20Region.pdf)
 
 #### Newton's method
 
