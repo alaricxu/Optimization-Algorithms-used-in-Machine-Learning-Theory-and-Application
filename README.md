@@ -56,4 +56,10 @@ Clearly, we can see that ![img](https://latex.codecogs.com/gif.latex?F%28n%29%20
 
 
 
+#### Boosting Method, Gradient Boosting vs AdaBoost
+
+See the detailed introduction in [Boosting Algorithm in Classification](https://github.com/alaricxu/Optimization-Algorithms-used-in-Machine-Learning-Theory-and-Application/blob/master/Thoughts%20on%20AdaBoost%20%26%20Gradient%20Boosting.pdf)
+
+
+
 
