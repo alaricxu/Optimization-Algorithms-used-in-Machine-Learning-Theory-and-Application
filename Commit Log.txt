@@ -1,4 +1,4 @@
 03/31/2019 Updated Newton's method & Gradient Descent
 04/01/2019 Updated Quasi-Newton's method
 04/02/2019 Updated Thoughts on AdaBoost vs Gradient Boosting
-04/05/2019 Updated Stochastic Gradient Descent (SGD)
+04/05/2019 Updated Practical Improvement on Gradient Descent
