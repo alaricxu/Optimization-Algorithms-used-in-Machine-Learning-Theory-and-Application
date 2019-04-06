@@ -12,9 +12,25 @@ See the update history [Commit Log](https://github.com/alaricxu/Optimization-Alg
 
 ### Part 1 Gradient-free Optimization
 
-to be continue...
+Most parameter estimation problems in machine learning cannot be solved in closed form, so we often have to resort to numerical optimization. 
 
+Gradient-free optimization is always a slog, and usually a bad idea. But we sometimes find ourselves doing it anyways. There are a few standard fallbacks that will sometimes sort of work, at least for small problems.
 
+#### Grid Search
+
+This just means choosing a set of values for each dimension, and exhaustively trying all combinations. The number of evaluations that you make of your function scales exponentially in the number of dimensions you're optimizing over.
+
+#### Random Search
+
+Random search just means trying completely random points, with no adaption. This is usually actually better than grid search. The reason is that adding irrelevant dimensions to your problem doesn't hurt you at all. Often, one doesn't which dimensions of your problem are important. With grid search, adding an irrelevant dimension at least doubles the total time taken.
+
+#### Bayesian Optimiation
+
+Bayesian optimization is a nice way to optimize functions when they're expensive enough that it's worth thinking about where to evaluate next.
+
+BayesOpt has been independently re-discovered many times, because it's a very natural way to approach the problem; Write down a huge set of functions that you might be optimizing (given what you've seen so far), and then ask which point is most likely to be better than the best one you have seen so far. 
+
+The downsides are that it's slow, and requires dedicated software.
 
 ### Part 2 Gradient-based Optimization
 
