@@ -2,3 +2,4 @@
 04/01/2019 Updated Quasi-Newton's method
 04/02/2019 Updated Thoughts on AdaBoost vs Gradient Boosting
 04/05/2019 Updated Practical Improvement on Gradient Descent
+04/05/2019 Updated part 1 of Gradient Descent Variants
