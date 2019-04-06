@@ -3,3 +3,4 @@
 04/02/2019 Updated Thoughts on AdaBoost vs Gradient Boosting
 04/05/2019 Updated Practical Improvement on Gradient Descent
 04/05/2019 Updated part 1 of Gradient Descent Variants
+04/06/2019 Updated Gradient-free methods
