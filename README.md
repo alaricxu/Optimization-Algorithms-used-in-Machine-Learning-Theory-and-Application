@@ -102,6 +102,7 @@ The standard momentum method first computes the gradient at the current location
 The formula for Nesterov accelerated gradient is as following with momentum parameter set to 0.9.
 
 ![img](https://latex.codecogs.com/gif.latex?v_t%3D%5Cgamma_%7Bt-1%7D%20v_%7Bt-1%7D%20-%20%5Ceta_%7Bt-1%7D%20%5Cnabla_%7B%5Ctheta%7D%20J%28%5Ctheta_%7Bt-1%7D%20&plus;%5Cgamma_%7Bt-1%7D%20v_%7Bt-1%7D%29)
+
 ![img](https://latex.codecogs.com/gif.latex?%5Ctheta_t%20%3D%20%5Ctheta_%7Bt-1%7D%20&plus;%20v_t)
 It enjoys stronger theoretical converge guarantees for convex functions and in practice it also consistently works slightly better than standard momentum.
 
