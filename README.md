@@ -6,9 +6,17 @@ See the update history [Commit Log](https://github.com/alaricxu/Optimization-Alg
 
 ### This repo will introduce regular optimization algorithms with its Python implementation
 
-In the first part, Line Search Algorithm will be introduced. For Line Search definition and example, please review [Line Search Example](https://github.com/alaricxu/Optimization-Algorithms-used-in-Machine-Learning-Theory-and-Application/blob/master/Term%20Explanation-Line%20Search%20%26%20Trust%20Region.pdf)
 
-### Part 1, Practical Optimization
+
+**At the very beginning, Line Search Algorithm will be introduced. For Line Search definition and example, please review [Line Search Example](https://github.com/alaricxu/Optimization-Algorithms-used-in-Machine-Learning-Theory-and-Application/blob/master/Term%20Explanation-Line%20Search%20%26%20Trust%20Region.pdf)**
+
+### Part 1 Gradient-free Optimization
+
+to be continue...
+
+
+
+### Part 2 Gradient-based Optimization
 
 #### Newton's method
 
@@ -100,6 +108,7 @@ The idea behind using momentum accelerating speed of the ball as it rolls down t
 The standard momentum method first computes the gradient at the current location and then takes a big jump in the direction of the updated accumulated gradient. The Nesterov Accelerated Gradient (NAG) looks ahead by calculating the gradient not by our current parameters but by approximating future position of our parameters. In the following illustration, instead of evaluating gradient at the current position (red circle), we know that our momentum is about to carry us to the tip of the green arrow. With Nesterov momentum we therefore instead evaluate the gradient at this "looked-ahead" position.
 
 ![img](https://1.bp.blogspot.com/-eX6i_P4d50A/V1P2nPYQBaI/AAAAAAAAFdo/3P9slgH5vWE36pgIfYnYiI0cRW8J5HroQCKgB/s640/nesterov.jpeg)
+
 The formula for Nesterov accelerated gradient is as following with momentum parameter set to 0.9.
 
 ![img](https://latex.codecogs.com/gif.latex?v_t%3D%5Cgamma_%7Bt-1%7D%20v_%7Bt-1%7D%20-%20%5Ceta_%7Bt-1%7D%20%5Cnabla_%7B%5Ctheta%7D%20J%28%5Ctheta_%7Bt-1%7D%20&plus;%5Cgamma_%7Bt-1%7D%20v_%7Bt-1%7D%29)
@@ -108,11 +117,33 @@ The formula for Nesterov accelerated gradient is as following with momentum para
 
 It enjoys stronger theoretical converge guarantees for convex functions and in practice it also consistently works slightly better than standard momentum.
 
+#### Adagrad
+
+All previous approaches we've discussed so far manipulated the learning rate globally and equally for all parameters. Adagrad is a well-suited algorithm for dealing with sparse data - it edits the learning rate to the parameters, performing larger updates for infrequent and smaller updates for frequent parameters. Adagrad uses a different learning rate for every parameter ![img](https://latex.codecogs.com/gif.latex?%5Ctheta)at each step, and not an update for all parameters at once and given by:
+
+![img](https://latex.codecogs.com/gif.latex?%5Ctheta_%7Bt&plus;1%7D%3D%5Ctheta_t%20-%20%5Cfrac%7B%5Ceta%7D%7B%5Csqrt%20%7BG_t&plus;%5Cepsilon%7D%7D%20%5Cbigodot%20%5Cnabla_%7B%5Ctheta%7D%20J%28%5Ctheta%29)
+
+where ![img](https://latex.codecogs.com/gif.latex?%5Cbigodot)is an element-wise multiplication, ![img](https://latex.codecogs.com/gif.latex?%5Cepsilon)is a smoothing term that avoids division by zero (usually on the order of 1e-8), ![img](https://latex.codecogs.com/gif.latex?G_t)is a diagonal matrix of sum of the squares of the past gradients -  ![img](https://latex.codecogs.com/gif.latex?%5Cnabla_%7B%5Ctheta%7D%20J%28%5Ctheta%29%5E2)
+
+One of Adagrad's main benefits is that it eliminates the need to manually tune the learning rate. Most implementations use a default value of 0.01 and leave it at that.
+
+#### Adadelta
+
+Adadelta is an improvement over Adagrad which reduces its aggressiveness and monotonically decreasing learning rate. Instead of accumulating all past squared gradients, Adadelta restricts the window of accumulated past gradients to some fixed size **w**. 
+
+With Adadelta, we do not even need to set a default learning rate.
+
+#### RMSprop
+
+RMSprop also tries to overcome the diminishing learning rates of Adagrad and works similarly to Adadelta as following:
+
+![img](https://latex.codecogs.com/gif.latex?E%5B%5Cnabla_%7B%5Ctheta%7DJ%28%5Ctheta%29%5E2%5D_t%20%3D%20%5Cgamma%20E%5B%5Cnabla_%7B%5Ctheta%7D%20J%28%5Ctheta%29%5E2%5D_%7Bt-1%7D%20&plus;%20%281-%5Cgamma%29%20%5Cnabla_%7B%5Ctheta%7D%20J%28%5Ctheta%29_t%5E2%20%5Ctheta_%7Bt&plus;1%7D%20%3D%5Ctheta_t%20-%20%5Cfrac%7B%5Ceta%7D%7B%5Csqrt%7BE%5B%5Cnabla_%7B%5Ctheta%7DJ%28%5Ctheta%29%5E2%5D_t%20&plus;%5Cepsilon%5D%7D%7D%20%5Cnabla_%7B%5Ctheta%7D%20J%28%5Ctheta%29_t)
+
+where E is a running average. RMSprop as well divides the learning rate by an exponentially decaying average of squared gradients. Momentum rate is usually set to 0.9, while a good default value for the learning rate is 0.001.
+
 #### Boosting Method, Gradient Boosting vs AdaBoost
 
 See the detailed introduction in [Boosting Algorithm in Classification](https://github.com/alaricxu/Optimization-Algorithms-used-in-Machine-Learning-Theory-and-Application/blob/master/Thoughts%20on%20AdaBoost%20%26%20Gradient%20Boosting.pdf)
-
-### Part 1 Summary:
 
 
 
