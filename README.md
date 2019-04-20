@@ -6,6 +6,8 @@ See the update history [Commit Log](https://github.com/alaricxu/Optimization-Alg
 
 ### This repo will introduce regular optimization algorithms with its Python implementation
 
+#### There have been many python package for optimization and GPU-compatible calculation. Please review [Python package for optimization](https://github.com/alaricxu/Optimization-Algorithms-used-in-Machine-Learning-Theory-and-Application/blob/master/PythonPackageOptimization.pdf)
+
 
 
 **At the very beginning, Line Search Algorithm will be introduced. For Line Search definition and example, please review [Line Search Example](https://github.com/alaricxu/Optimization-Algorithms-used-in-Machine-Learning-Theory-and-Application/blob/master/Term%20Explanation-Line%20Search%20%26%20Trust%20Region.pdf)**
